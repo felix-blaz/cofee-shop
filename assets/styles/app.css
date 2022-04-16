@@ -1,0 +1,151 @@
+body {
+    background-color: lightgray;
+}
+.top{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid black;
+    height:50px;
+    background-color: chocolate;
+}
+
+.top_i{
+    display: flex;
+    flex-direction: row;
+    margin: 10px 10px;
+    height:auto;
+}
+.phone{
+    display: flex;
+    flex-direction: row;
+    height:auto;
+}
+.email{
+    display: flex;
+    flex-direction: row;
+    height:auto;
+}
+
+.phone_i{
+
+    margin-left: 20px ;
+}
+
+.phone_n{
+
+    margin-left: 10px ;
+}
+.email_e{
+
+    margin-left: 10px ;
+}
+
+.email_i{
+
+    margin-left: 20px ;
+}
+
+.ff{
+    width: 60%;
+}
+
+.fi{
+    display: flex;
+    flex-direction: row;
+    height:auto;
+    margin: 10px 10px;
+}
+
+
+.f{
+margin-left: 20px ;
+}
+.i{
+    margin-left: 20px ;
+}
+.phone_n a{
+    color: #AAAAAA;
+    background-color: transparent;
+    text-decoration: none;
+
+}
+.phone_n a:hover {
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.email_e a:hover{
+    color: black;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.email_i svg{
+    color: #AAAAAA;
+}
+.phone_i svg{
+    color: #AAAAAA;
+}
+
+.email_e a{
+    color: #AAAAAA;
+    background-color: transparent;
+    text-decoration: none;
+}
+.f a{
+    color: black;
+}
+.i a{
+    color: black;
+}
+
+.f a:hover{
+    color: #8B4513;
+    transform: translateY(-10px)
+}
+.i a:hover{
+    color: #8B4513;
+    transform: translateY(-10px)
+}
+
+li a svg:hover{
+    color: #8B4513;
+
+}
+.cart{
+    float:right;
+    margin-right:20px ;
+}
+li a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+li a.active {
+    color: white;
+    background-color: #04AA6D;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: #666;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
