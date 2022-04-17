@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CoffeeController!{% endblock %}
+
+{% block body %}
+
+    {% block stylesheets %}
+
+            <link rel="stylesheet" href="{{asset('build/app.css')}}">
+
+        {% endblock %}
+
+    <div class="box">
+        <h1>coffee</h1>
+        <div class="box-row">
+            {% for coffee in coffee %}
+                <div class="box2">
+                    <div class="box3">
+                <img
+                        src="{{ coffee.image }}"
+                        alt=""
+                        class="cimg" />
+
+                        <div class="boxbody">
+                            <h5>{{ coffee.name }}</h5>
+                            <p>{{ coffee.description }}</p>
+                            <div class="boxend">
+                                <a href="#">view details</a>
+                                <h5>$ {{ coffee.price }} </h5>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+
+
+</div>
+{% endblock %}
