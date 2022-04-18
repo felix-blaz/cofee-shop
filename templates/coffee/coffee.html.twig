@@ -13,7 +13,7 @@
     <div class="box">
         <h1>coffee</h1>
         <div class="box-row">
-            {% for coffee in coffee %}
+            {% for coffee in coffees %}
                 <div class="box2">
                     <div class="box3">
                 <img
@@ -25,7 +25,8 @@
                             <h5>{{ coffee.name }}</h5>
                             <p>{{ coffee.description }}</p>
                             <div class="boxend">
-                                <a href="#">view details</a>
+                                <a href=" {{ path('coffee.detail', {id: coffee.id}) }}" class="btn btn-dark">
+                                View details</a>
                                 <h5>$ {{ coffee.price }} </h5>
                             </div>
                         </div>

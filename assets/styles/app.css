@@ -228,9 +228,12 @@ li a {
     text-decoration: none;
     font-weight: bold;
     background-color: #AAAAAA;
+    border-radius: 8px;
 }
 
-
+.btn btn-warning{
+    background-color: chocolate;
+}
 
 
 
