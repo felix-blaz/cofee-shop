@@ -1,5 +1,4 @@
 <?php
-// src/Factory/UserFactory.php
 namespace App\Factory;
 
 use App\Entity\Order;

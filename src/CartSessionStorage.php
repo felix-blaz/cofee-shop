@@ -1,7 +1,6 @@
 <?php
 
-
-namespace App\Storage;
+namespace App;
 
 use App\Entity\Order;
 use App\Repository\OrderRepository;
@@ -30,7 +29,7 @@ class CartSessionStorage
     const CART_KEY_NAME = 'cart_id';
 
     /**
-     * CartManager constructor.
+     * CartSessionStorage constructor.
      *
      * @param RequestStack $requestStack
      * @param OrderRepository $cartRepository

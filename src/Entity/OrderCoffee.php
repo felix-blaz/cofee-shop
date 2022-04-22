@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\OrderCoffeeRepository;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: OrderCoffeeRepository::class)]
 class OrderCoffee
@@ -15,9 +16,11 @@ class OrderCoffee
 
     #[ORM\ManyToOne(targetEntity: Coffee::class)]
     #[ORM\JoinColumn(nullable: false)]
-    private $coffee;
+    private $items;
 
     #[ORM\Column(type: 'integer')]
+    #[Assert\NotBlank()]
+    #[Assert\GreaterThanOrEqual(1)]
     private $quantity;
 
     #[ORM\ManyToOne(targetEntity: Order::class, inversedBy: 'items')]
@@ -31,12 +34,12 @@ class OrderCoffee
 
     public function getCoffee(): ?Coffee
     {
-        return $this->coffee;
+        return $this->items;
     }
 
-    public function setCoffee(?Coffee $coffee): self
+    public function setCoffee(?Coffee $items): self
     {
-        $this->coffee = $coffee;
+        $this->items = $items;
 
         return $this;
     }
@@ -64,13 +67,13 @@ class OrderCoffee
 
         return $this;
     }
-    public function equals(OrderItem $item): bool
+    public function equals(OrderCoffee $item): bool
     {
-        return $this->getProduct()->getId() === $item->getProduct()->getId();
+        return $this->getCoffee()->getId() === $item->getCoffee()->getId();
     }
 
     public function getTotal(): float
     {
-        return $this->getProduct()->getPrice() * $this->getQuantity();
+        return $this->getCoffee()->getPrice() * $this->getQuantity();
     }
 }

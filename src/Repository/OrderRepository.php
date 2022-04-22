@@ -8,6 +8,7 @@ use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
 
+
 /**
  * @method Order|null find($id, $lockMode = null, $lockVersion = null)
  * @method Order|null findOneBy(array $criteria, array $orderBy = null)
@@ -19,6 +20,20 @@ class OrderRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Order::class);
+    }
+
+
+    public function findCartsNotModifiedSince(\DateTime $limitDate, int $limit = 10): array
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.status = :status')
+            ->andWhere('o.updatedAt < :date')
+            ->setParameter('status', Order::STATUS_CART)
+            ->setParameter('date', $limitDate)
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult()
+            ;
     }
 
     /**

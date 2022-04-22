@@ -22,9 +22,6 @@ class Order
     #[ORM\Column(type: 'string', length: 255)]
     private $status = self::STATUS_CART;
 
-    #[ORM\Column(type: 'datetime')]
-    private $createdAt;
-
     /**
      * An order that is in progress, not placed yet.
      *
@@ -32,6 +29,10 @@ class Order
      */
 
     const STATUS_CART = 'cart';
+
+    #[ORM\Column(type: 'datetime')]
+    private $createdAt;
+
 
     #[ORM\Column(type: 'datetime')]
     private $updatedAt;
@@ -129,6 +130,7 @@ class Order
 
         return $this;
     }
+
     public function getTotal(): float
     {
         $total = 0;
