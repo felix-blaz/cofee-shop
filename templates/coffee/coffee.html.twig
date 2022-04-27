@@ -11,7 +11,19 @@
         {% endblock %}
 
     <div class="box">
-        <h1>coffee</h1>
+
+        <div class="cr">
+
+            {% if app.user %}
+            <h1>
+                <div class="c1"> <a href="/coffee/create" >add new coffee</a></div>
+            </h1>
+
+            {% endif %}
+            <div class="c2"><h1>coffee</h1></div>
+        </div>
+
+
         <div class="box-row">
             {% for coffee in coffees %}
                 <div class="box2">

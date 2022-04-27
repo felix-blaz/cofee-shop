@@ -35,6 +35,9 @@
                 {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
 
                 {{ form_end(form) }}
+                <a href="/coffee/edit">
+                <button type="button" class="btn btn-primary">edit {{ coffee.name }}</button>
+                </a>
             </div>
         </div>
     </div>
