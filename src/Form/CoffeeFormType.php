@@ -18,7 +18,7 @@ class CoffeeFormType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'attr' => array(
-                    'class' => 'bg-transparent block border-b-2 w-full h-20 text-6xl outline-none',
+                    'class' => ' block border-b-2 w-full h-20 text-6xl outline-none',
                     'placeholder' => 'Enter name...',
                 ),
                 'label' => false,
@@ -36,7 +36,7 @@ class CoffeeFormType extends AbstractType
 
             ->add('price', IntegerType::class, [
                 'attr' => array(
-                    'class' => 'bg-transparent block mt-10 border-b-2 w-full h-20 text-6xl outline-none',
+                    'class' => ' block mt-10 border-b-2 w-full h-20 text-6xl outline-none',
                     'placeholder' => 'Price'
                 ),
                 'label' => false,

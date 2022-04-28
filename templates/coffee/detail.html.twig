@@ -35,9 +35,15 @@
                 {{ form_widget(form.add, {'attr': {'class': 'btn btn-warning w-25'}}) }}
 
                 {{ form_end(form) }}
-                <a href="/coffee/edit">
+                {% if app.user %}
+                <a href="/coffee/edit/{{ coffee.id }}">
                 <button type="button" class="btn btn-primary">edit {{ coffee.name }}</button>
                 </a>
+
+                <a href="/coffee/delete/{{ coffee.id }}">
+                    <button type="button" class="btn btn-danger">delete {{ coffee.name }}</button>
+                </a>
+                {% endif %}
             </div>
         </div>
     </div>

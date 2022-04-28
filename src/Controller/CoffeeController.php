@@ -33,7 +33,7 @@ class CoffeeController extends AbstractController
     public function index(CoffeeRepository $coffeeRepository): Response
     {
         return $this->render('coffee/coffee.html.twig', [
-            'coffees' => $coffeeRepository->findAll(),
+            'coffee' => $coffeeRepository->findAll(),
         ]);
     }
 
@@ -71,8 +71,64 @@ class CoffeeController extends AbstractController
     ]);
     }
 
+    #[Route('/coffee/edit/{id}', name: 'edit_coffee')]
+    public function edit($id, Request $request):Response
+    {
+        $coffee = $this->coffeeRepository->find($id);
+        $form = $this->createForm(CoffeeFormType::class, $coffee);
 
+        $form->handleRequest($request);
+        $image = $form->get('image')->getData();
 
+        if($form->isSubmitted() && $form->isValid()){
+            if ($image) {
+                if ($coffee->getImage() !== null) {
+                    if (file_exists(
+                        $this->getParameter('kernel.project_dir') . $coffee->getImage()
+                    )) {
+                        $this->GetParameter('kernel.project_dir') . $coffee->getImage();
+                    }
+                    $newFileName = uniqid() . '.' . $image->guessExtension();
+
+                    try {
+                        $image->move(
+                            $this->getParameter('kernel.project_dir') . '/public/uploads',
+                            $newFileName
+                        );
+                    } catch (FileException $e) {
+                        return new Response($e->getMessage());
+                    }
+
+                    $coffee->setImage('/uploads/' . $newFileName);
+                    $this->em->flush();
+
+                    return $this->redirectToRoute('coffee');
+                }
+            }else{
+                $coffee->setName($form->get('name')->getData());
+                $coffee->setDescription($form->get('description')->getData());
+                $coffee->setPrice($form->get('price')->getData());
+
+                $this->em->flush();
+                return $this->redirectToRoute('coffee');
+            }
+        }
+        return  $this->render('coffee/edit.html.twig', [
+            'coffee' => $coffee,
+            'form' => $form->createView()
+        ]);
+    }
+
+    #[Route('/coffee/delete/{id}', methods: ['GET', 'DELETE'], name: 'delete_coffee')]
+    public function delete($id): Response
+    {
+
+        $coffee = $this->coffeeRepository->find($id);
+        $this->em->remove($coffee);
+        $this->em->flush();
+
+        return $this->redirectToRoute('coffee');
+    }
 
     #[Route('/coffee/{id}', name: 'coffee.detail')]
     public function coffeeD(Coffee $coffee, Request $request, CartManager $cartManager)
