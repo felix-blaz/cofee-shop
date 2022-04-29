@@ -35,5 +35,12 @@ class CartController extends AbstractController
         ]);
     }
 
+ #[Route('/cart/checkout', name: 'checkout')]
+ public function out(): Response
+ {
+     $template = 'cart/chechout.html.twig';
+     $argsArray = [];
 
+     return $this->render($template, $argsArray);
+ }
 }

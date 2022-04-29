@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}home page{% endblock %}
+
+
+
+{% block body %}
+
+    {% block stylesheets %}
+
+        <link rel="stylesheet" href="{{asset('build/app.css')}}">
+
+    {% endblock %}
+
+    <section class="about">
+        <article class="about-cafe">
+            <p>your inquery is being proceced and we will get back to you as soon as possible.
+            Keep an eye on your email.</p>
+            <i class="fa fa-coffee" aria-hidden="true"></i>
+        </article>
+
+    </section>
+
+
+
+
+{% endblock %}

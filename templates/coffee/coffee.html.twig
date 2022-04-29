@@ -19,6 +19,9 @@
                 <div class="c1"> <a href="/coffee/create" >add new coffee</a></div>
             </h1>
 
+                <h1>
+                    <div class="c1"> <a href="{{ path('user_index') }}" >view users</a></div>
+                </h1>
             {% endif %}
             <div class="c2"><h1>coffee</h1></div>
         </div>
@@ -36,12 +39,13 @@
                         <div class="boxbody">
                             <h5>{{ coffee.name }}</h5>
                             <p>{{ coffee.description }}</p>
-                            <div class="boxend">
-                                <a href=" {{ path('coffee.detail', {id: coffee.id}) }}" class="btn btn-dark">
-                                View details</a>
-                                <h5>$ {{ coffee.price }} </h5>
+
                             </div>
                         </div>
+                    <div class="boxend">
+                        <h5> price: $ {{ coffee.price }} </h5>
+                        <a href=" {{ path('coffee.detail', {id: coffee.id}) }}" class="btn btn-dark">
+                            Buy</a>
                     </div>
             </div>
             {% endfor %}

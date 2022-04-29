@@ -24,8 +24,8 @@
 
                 <div class="content">
                     <div>
-                        <h2>Welcome to chillys Cafe</h2>
-                        <p>Are you ready to make it yours? After an extensive refurbishment, the iconic Chillys Café has reopened its doors on Dawson Street. Spanning over three floors, our art nouveau haven now includes a designated dining area, several beautiful scenery and an impressive indoor Street Garden.</p>
+                        <h2>Welcome to chillys Coffee Cafe</h2>
+                        <p>Are you ready to make it yours? After an extensive refurbishment, the iconic Chillys Coffee Café has reopened its doors on Dawson Street. Spanning over three floors, our art nouveau haven now includes a designated dining area, several beautiful scenery and an impressive indoor Street Garden.</p>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="content1">
                     <div>
                         <h2>Co.Void 19</h2>
-                        <p>On Sunday 15th March we voluntarily closed the Chillys Café. On Tuesday 17th March (Paddy’s Day) we reopened with a new website, people all over Dublin as opposed to just in our 59 seats here in Phibsborough, all thanks to Covid-19. Remember folks, you can see the virus as a threat or an opportunity. We prefer the latter. Chillys Cafe We paid €7,000 for this horse box last year. Little did we know how valuable it would be to us a year later. It’s all we have now. It’s keeping the Moose alive! The chillys Café Box is open from 9-4 and it does takeaway food AND coffee. If you’re coming to the box, please remember to keep your fucking distance by obeying our SDO (Social Distancing Officer) and standing where you are told.</p>
+                        <p> On Tuesday 17th March (Paddy’s Day) we reopened with a new website, people all over Dublin as opposed to just in our 59 seats here in Phibsborough, all thanks to Covid-19. Remember folks, you can see the virus as a threat or an opportunity. We prefer the latter. Chillys Coffee Cafe We paid €7,000 for this horse box last year. Little did we know how valuable it would be to us a year later. It’s all we have now. It’s keeping the Moose alive! The chillys Café Box is open from 9-4 and it does takeaway food AND coffee. If you’re coming to the box, please remember to keep your fucking distance by obeying our SDO (Social Distancing Officer) and standing where you are told.</p>
 
 
                         <p>Thank you,</p>
@@ -75,8 +75,8 @@
         <div class="all">
             <div class="talk1">
                 <h2>Our Menu</h2>
-                <p>At Chillys Cafe we have a wide rage of differnt drinks
-                    from hot drinks like cofee and hot chocolate to cold refreshiing beverages and smoothies.Take a look at our Menu and see what peeks your interest.</p>
+                <p>At Chillys Coffee Cafe we have a wide rage of differnt coffees
+                    from lates to long black.Take a look at our Menu and see what peeks your interest.</p>
             </div>
             <div class="bleach">
                 <button class="bed"><a href="{{ path('coffee') }}" style="text-decoration: none">></a></button>
@@ -95,7 +95,13 @@
         <article class="about-cafe">
             <h3>about us</h3>
             <i class="fa fa-coffee" aria-hidden="true"></i>
-            <p>Welcome to the newly reimagined Chillys Cafe, one of Dublin’s most iconic and stunning venues. Nestled in the heart of Dublin’s city centre on Dawson Street, Chillys Cafe was established in 1993 and quickly became a go-to destination for locals and visitors to the city. Today, its legacy continues with a beautiful, newly designed space which features several dining experiences, along with a range of delicious delights, bespoke event areas and a stunning indoor Parisian street garden.</p>
+            <p>Welcome to the newly reimagined Chillys Coffee Cafe, one of Dublin’s
+                most iconic and stunning venues. Nestled in the heart of Dublin’s city
+                centre on Dawson Street, Chillys Cafe was established in 1993 and quickly
+                became a go-to destination for locals and visitors to the city. Today, its
+                legacy continues with a beautiful, newly designed space which features several
+                dining experiences, along with a range of delicious delights, bespoke event areas
+                and a stunning indoor Parisian street garden.</p>
         </article>
 
     </section>
@@ -108,10 +114,13 @@
         <article class="contact-card">
             <form>
                 <h3>contact us</h3>
-                <input type="text" id="name" placeholder="your name">
-                <input type="email" id="1name" placeholder="your email">
-                <textarea name="comment" id="name3" cols="30" rows="10" placeholder="Leave a comment"></textarea>
-                <button type="submit" class="form-btn">submit</button>
+                <input type="text" id="name" placeholder="your name" required>
+                <input type="email" id="1name" placeholder="your email" required>
+                <textarea name="comment" id="name3" cols="30" rows="10" placeholder="Leave a comment" required></textarea>
+
+                <a href="{{ path('feedback') }}">
+                <button type="button" class="form-btn" >submit </button>
+                </a>
             </form>
 
         </article>

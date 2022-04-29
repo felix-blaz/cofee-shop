@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CartController!{% endblock %}
+
+{% block body %}
+
+    {% block stylesheets %}
+
+        <link rel="stylesheet" href="{{asset('build/app.css')}}">
+
+    {% endblock %}
+
+    <section class="about">
+        <article class="about-cafe">
+            <h3>Enjoy your coffee and
+                thanks for shopping at Chillys Coffee Cafes.</h3>
+            <i class="fa fa-coffee" aria-hidden="true"></i>
+        </article>
+
+    </section>
+{% endblock %}

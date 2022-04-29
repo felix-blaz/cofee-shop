@@ -206,11 +206,13 @@ li a {
 }
 .box2{
     margin: 15px 15px 15px 15px;
-}
-.box3{
-    border: 4px solid dimgrey;
+    height: 500px;
+    position: relative;
+    border: 2px solid dimgrey;
     border-radius: 8px;
-
+}
+.box3 img{
+    height: 250px;
 }
 .box3 p{
     font-size: medium;
@@ -223,14 +225,19 @@ li a {
     margin: 10px 10px 10px 10px;
 
 }
+.boxbody p{
+   font-size: small;
+
+}
 .boxend{
-    display: flex;
-    flex-direction: row;
     text-align: right;
+    position: absolute;
+    left:     10px;
+    bottom:   5px;
 
 }
 .boxend h5{
-    margin-left: 40%;
+
     font-weight: bold;
 }
 .boxend a{
