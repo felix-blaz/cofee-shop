@@ -26,4 +26,13 @@ class HomeController extends AbstractController
         return $this->render($template, $argsArray);
     }
 
+    #[Route('/perks', name: 'perks')]
+    public function perks(): Response
+    {
+        $template = 'default/perks.html.twig';
+        $argsArray = [];
+
+        return $this->render($template, $argsArray);
+    }
+
 }
